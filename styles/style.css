@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(./fonts/Poppins.ttf);
+}
+
+:root{
+    --font-primary: Poppins;
+}
+
+body {
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ color: white;
+ -webkit-font-smoothing: antialiased;
+}
+
+body, input, button {
+ font-size: 14px;
+ font-family: var(--font-primary);
+}
+
+button {
+ cursor: pointer;
+}
+
+.main{
+  margin-top: 5rem;
+}
+
+/* Fondo */
+
+.fondo-dia{
+  background: linear-gradient(125deg, #97c1e8 0%, #61a1dd 17%, #002e7a 100%);
+}
+
+.fondo-noite{
+  background: linear-gradient(125deg, #012241 0%, #013565 17%, #002e7a 100%);
+}
+
+/* Weather */
+
+.weather__icon{
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+  animation: movemento 5s ease-in-out infinite;
+}
+
+@keyframes movemento {
+
+  0%, 100%{
+    scale: 1;
+    rotate:355deg;
+  }
+
+  50%{
+    scale: .95;
+    rotate:360deg;
+  }
+  
+}
+
+/* Buscar */
+
+.buscar{
+  height: 100vh;
+  background-color: #2e333d;
+}
+
+.buscador{
+  margin-top: 8rem;
+}
+.pronostico{
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center; */
+  margin-bottom: 50px;
+  scroll-snap-type: x proximity;
+    overflow-x: scroll;
+  overflow-y: hidden;
+  width: 100%;
+   white-space: nowrap;
+padding-bottom: 10px;
+scrollbar-color: #002e7a #61a1dd;
+}
+.pronostico__card{
+  background: rgba(255, 255, 255, 0.28);
+border-radius: 10px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+padding: 5px;
+  width: 50px;
+  display: inline-block;
+}
